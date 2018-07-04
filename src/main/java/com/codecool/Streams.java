@@ -51,10 +51,7 @@ public class Streams {
 //         * HINT: the keyword here is "collect"
 //         */
 
-        List<String> collectedList = s3.collect(Collectors.toList());
-
-//
-//        List<String> l1 = /* ??? */;
+//        List<String> l1 = s3.collect(Collectors.toList());
 //
 //        /*
 //         * Streams can be infinite.  We obviously cannot create such a
@@ -65,20 +62,25 @@ public class Streams {
 //         * - These methods cannot belong to an instance
 //         * - They are returning streams
 //         */
-//
+
+
 //        /*
 //         * Create a stream of the powers of two.
 //         */
 //
-//        Integer twoToTheZeroth = 1;
-//        UnaryOperator<Integer> doubler = (Integer x) -> 2 * x;
-//        Stream<Integer> s4 = /* ??? */;
+        Integer twoToTheZeroth = 1;
+        UnaryOperator<Integer> doubler = (Integer x) -> 2 * x;
+        Stream<Integer> s4 = Stream.iterate(twoToTheZeroth, doubler);
+//        s4
+//                .forEach(System.out::println);
 //
 //        /*
 //         * Create a stream containing the first ten elements of s4.
 //         */
 //
-//        Stream<Integer> s5 = s4. /* ??? */;
+        Stream<Integer> s5 = s4.limit(10);
+        s5
+                .forEach(System.out::println);
 //
 //        /*
 //         * Create a stream containing the elements of the Fibonacci
@@ -86,9 +88,9 @@ public class Streams {
 //         *
 //         * HINT: You will need to create a new class for this.
 //         */
-//
-//        Supplier<Integer> fibSupp = new Fibonacci();
-//        Stream<Integer> s6 = /* ??? */;
-//    }
+
+        Supplier<Integer> fibSupp = new Fibonacci();
+        Stream<Integer> s6 = /* ??? */;
+
     }
     }
